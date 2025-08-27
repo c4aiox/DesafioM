@@ -67,6 +67,13 @@ Isso irá subir a aplicação e os serviços necessários (ex: banco de dados).
 
 Exemplos de chamadas à API (cURL)
 
+- **Criar moto**
+    ```bash
+    curl -X POST http://localhost:5195/api/motorcycle \
+         -H "Content-Type: application/json" \
+         -d '{"Id":"005","Model":"ModelX","Plate":"ZZZ999"}'
+    ```
+
 - **Listar motos**
     ```bash
     curl -X GET http://localhost:5195/api/motorcycle
@@ -74,19 +81,12 @@ Exemplos de chamadas à API (cURL)
 
 - **Buscar moto por placa**
     ```bash
-    curl -X GET http://localhost:5195/api/motorcycle/plate/ABC123
+    curl -X GET http://localhost:5195/api/motorcycle/plate/ZZZ999
     ```
 
 - **Buscar moto por Id**
     ```bash
-    curl -X GET http://localhost:5195/api/motorcycle/001
-    ```
-
-- **Criar moto**
-    ```bash
-    curl -X POST http://localhost:5195/api/motorcycle \
-         -H "Content-Type: application/json" \
-         -d '{"Id":"005","Model":"ModelX","Plate":"ZZZ999"}'
+    curl -X GET http://localhost:5195/api/motorcycle/005
     ```
 
 
