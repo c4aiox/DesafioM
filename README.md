@@ -36,26 +36,6 @@ Testes Automatizados
 - Testam cenários de criação, consulta e validação de motos
 
 
-Como escrever um teste
-
-1. Crie um método público com `[Fact]`
-2. Instancie o controller e o contexto em memória
-3. Realize a ação (ex: criar moto)
-4. Use asserts para validar o resultado
-
-Exemplo:
-```csharp
-[Fact]
-public void CreateMotorcycle_ShouldSaveMotorcycle()
-{
-    var controller = new MotorcycleController(context, loggerMock.Object);
-    var newMotorcycle = new Motorcycle { Id = "002", Model = "ModelB", Plate = "XYZ789" };
-    var result = controller.CreateMotorcycle(newMotorcycle);
-    Assert.NotNull(result as OkResult);
-}
-```
-
-
 Como rodar os testes
 
 No terminal, execute:
