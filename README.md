@@ -28,13 +28,16 @@ Estrutura dos Códigos
 - **Data**: Contexto do Entity Framework (`AppDbContext`)
 - **Tests**: Testes unitários com xUnit e Moq (`BikeRental.Api.Tests`)
 
+Instalação das Dependências
 
+   ```powershell
+    dotnet restore
+   ```
 
 Testes Automatizados
 
 - Os testes estão em `BikeRental.Api.Tests\Controllers\MotorcycleControllerTest.cs`
 - Testam cenários de criação, consulta e validação de motos
-
 
 Como rodar os testes
 
@@ -42,48 +45,46 @@ No terminal, execute:
 ```powershell
 dotnet test
 ```
+
+
 Como iniciar a aplicação
 
-1. Instale as dependências:
-    ```powershell
-    dotnet restore
-    ```
-2. Execute a aplicação:
-    ```powershell
-    dotnet run --project BikeRental.Api
-    ```
-3. A API estará disponível em `http://localhost:5000` (ou porta configurada)
+1. Docker Compose
 
-
-
-Docker Compose
-
-Se houver um arquivo `docker-compose.yml`, basta executar:
+Inicializar o banco de dados via docker compose:
 ```powershell
 docker-compose up
 ```
 Isso irá subir a aplicação e os serviços necessários (ex: banco de dados).
 
+
+2. Execute a aplicação:
+    ```powershell
+    dotnet run --project BikeRental.Api
+    ```
+    A API estará disponível em `http://localhost:5195`
+
+
 Exemplos de chamadas à API (cURL)
 
 - **Listar motos**
     ```bash
-    curl -X GET http://localhost:5000/api/motorcycle
+    curl -X GET http://localhost:5195/api/motorcycle
     ```
 
 - **Buscar moto por placa**
     ```bash
-    curl -X GET http://localhost:5000/api/motorcycle/plate/ABC123
+    curl -X GET http://localhost:5195/api/motorcycle/plate/ABC123
     ```
 
 - **Buscar moto por Id**
     ```bash
-    curl -X GET http://localhost:5000/api/motorcycle/001
+    curl -X GET http://localhost:5195/api/motorcycle/001
     ```
 
 - **Criar moto**
     ```bash
-    curl -X POST http://localhost:5000/api/motorcycle \
+    curl -X POST http://localhost:5195/api/motorcycle \
          -H "Content-Type: application/json" \
          -d '{"Id":"005","Model":"ModelX","Plate":"ZZZ999"}'
     ```
