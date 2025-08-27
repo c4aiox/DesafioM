@@ -34,7 +34,6 @@ Testes Automatizados
 
 - Os testes estão em `BikeRental.Api.Tests\Controllers\MotorcycleControllerTest.cs`
 - Testam cenários de criação, consulta e validação de motos
-- Paralelismo dos testes está desabilitado para evitar conflitos com banco em memória
 
 
 Como escrever um teste
