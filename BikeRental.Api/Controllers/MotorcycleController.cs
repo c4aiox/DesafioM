@@ -44,7 +44,7 @@ public class MotorcycleController : ControllerBase
 
     [HttpGet("{id}")]
 
-    public IActionResult GetMotorcycleById(int id)
+    public IActionResult GetMotorcycleById(string id)
     {
         var motorcycle = _context.Motorcycles.Find(id);
         if (motorcycle == null)
